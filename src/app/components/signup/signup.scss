@@ -1,0 +1,28 @@
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #e8eaf6;
+}
+
+.signup-card {
+  width: 400px;
+  padding: 2rem;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.error-msg {
+  color: #d32f2f;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 14px;
+}
+
+mat-card-actions {
+  text-align: center;
+}

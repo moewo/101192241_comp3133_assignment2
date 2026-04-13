@@ -1,0 +1,41 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.container {
+  padding: 2rem;
+}
+
+.search-bar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.emp-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.no-data {
+  text-align: center;
+  padding: 2rem;
+  color: #888;
+  font-size: 16px;
+}
+
+mat-toolbar button {
+  margin-left: 0.5rem;
+}
+
+table {
+  width: 100%;
+}

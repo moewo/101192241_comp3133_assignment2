@@ -1,0 +1,74 @@
+<div class="form-container">
+  <mat-card class="form-card">
+    <mat-card-header>
+      <mat-card-title>Add New Employee</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div *ngIf="errorMessage" class="error-msg">{{ errorMessage }}</div>
+
+      <div class="form-row">
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>First Name</mat-label>
+          <input matInput [(ngModel)]="employee.first_name" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>Last Name</mat-label>
+          <input matInput [(ngModel)]="employee.last_name" required />
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="employee.email" type="email" required />
+      </mat-form-field>
+
+      <div class="form-row">
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>Gender</mat-label>
+          <mat-select [(ngModel)]="employee.gender" required>
+            <mat-option value="Male">Male</mat-option>
+            <mat-option value="Female">Female</mat-option>
+            <mat-option value="Other">Other</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>Department</mat-label>
+          <input matInput [(ngModel)]="employee.department" required />
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>Designation</mat-label>
+          <input matInput [(ngModel)]="employee.designation" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>Salary</mat-label>
+          <input matInput [(ngModel)]="employee.salary" type="number" required />
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Date of Joining</mat-label>
+        <input matInput [(ngModel)]="employee.date_of_joining" type="date" required />
+      </mat-form-field>
+
+      <div class="file-upload">
+        <label>Profile Photo:</label>
+        <input type="file" accept="image/*" (change)="onFileSelected($event)" />
+      </div>
+
+      <div *ngIf="employee.employee_photo" class="photo-preview">
+        <img [src]="employee.employee_photo" alt="Preview" />
+      </div>
+
+      <div class="button-row">
+        <button mat-raised-button color="primary" (click)="onSubmit()">Add Employee</button>
+        <button mat-button (click)="onCancel()">Cancel</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

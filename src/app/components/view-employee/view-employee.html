@@ -1,0 +1,51 @@
+<div class="view-container" *ngIf="employee">
+  <mat-card class="view-card">
+    <mat-card-header>
+      <mat-card-title>{{ employee.first_name }} {{ employee.last_name }}</mat-card-title>
+      <mat-card-subtitle>{{ employee.designation }} — {{ employee.department }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <div class="photo-section">
+      <img
+        [src]="employee.employee_photo || 'https://ui-avatars.com/api/?name=' + employee.first_name + '+' + employee.last_name + '&size=150&background=3f51b5&color=fff'"
+        alt="Employee Photo"
+      />
+    </div>
+
+    <mat-card-content>
+      <div class="detail-row">
+        <strong>Email:</strong>
+        <span>{{ employee.email }}</span>
+      </div>
+      <div class="detail-row">
+        <strong>Gender:</strong>
+        <span>{{ employee.gender }}</span>
+      </div>
+      <div class="detail-row">
+        <strong>Department:</strong>
+        <span>{{ employee.department }}</span>
+      </div>
+      <div class="detail-row">
+        <strong>Designation:</strong>
+        <span>{{ employee.designation }}</span>
+      </div>
+      <div class="detail-row">
+        <strong>Salary:</strong>
+        <span>${{ employee.salary }}</span>
+      </div>
+      <div class="detail-row">
+        <strong>Date of Joining:</strong>
+        <span>{{ employee.date_of_joining }}</span>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon> Back to List
+      </button>
+      <button mat-raised-button color="accent" (click)="onEdit()">
+        <mat-icon>edit</mat-icon> Edit
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
